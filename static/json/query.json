@@ -1,5 +1,9 @@
 {
-  "Type": { "Price": "0", "Arrival": "1", "Both": "2" },
+  "Type": {
+    "Price": "0",
+    "Arrival": "1",
+    "Both": "2"
+  },
   "Commodity": {
     "--Select--": "0",
     "Ajwan": "137",
@@ -386,7 +390,9 @@
     "Uttrakhand": "UC",
     "West Bengal": "WB"
   },
-  "District": { "--Select--": "0" },
+  "District": {
+    "--Select--": "0"
+  },
   "Market": {
     "--Select--": "0",
     "27-A": "8173",
