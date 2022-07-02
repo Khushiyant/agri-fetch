@@ -17,9 +17,9 @@ class response:
         for row in self.soup.find_all('tr'):
             item = {}
             for i, dt in enumerate(row.find_all('td')):
-                text = dt.text
+                text = " ".join(dt.text.split())
                 if text:
-                    item[divisions[i]] = " ".join(text.split())
+                    item[divisions[i]] = text
             if item:
                 data['results'].append(item)
         
