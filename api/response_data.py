@@ -6,22 +6,7 @@ class response:
     '''
         scrap the data from agmarknet.gov.in
     '''
-    def __init__(self, Tx_Commodity, Tx_State, Tx_District, Tx_Market, DateFrom, DateTo, Tx_Trend, Tx_CommodityHead, Tx_StateHead, Tx_DistrictHead, Tx_MarketHead) -> None:
-        params = {
-            'Tx_Commodity': Tx_Commodity,
-            'Tx_State': Tx_State,
-            'Tx_District': Tx_District,
-            'Tx_Market': Tx_Market,
-            'DateFrom': DateFrom,
-            'DateTo': DateTo,
-            'Fr_Date': DateFrom,
-            'To_Date': DateTo,
-            'Tx_Trend': Tx_Trend,
-            'Tx_CommodityHead': Tx_CommodityHead,
-            'Tx_StateHead': Tx_StateHead,
-            'Tx_DistrictHead': Tx_DistrictHead,
-            'Tx_MarketHead': Tx_MarketHead
-        }
+    def __init__(self, params) -> None:
         r = requests.get(
             "http://agmarknet.gov.in/SearchCmmMkt.aspx", params=params)
         self.soup = bs4.BeautifulSoup(r.text, 'html.parser')
