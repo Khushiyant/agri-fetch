@@ -31,7 +31,7 @@ class response:
             data['status'] = 403
             data['message'] = 'No data available'
             data.pop('results')
-        return data
+        return  json.load(data)
 
 
 if __name__ == '__main__':
