@@ -1,9 +1,7 @@
-from base.models import Commodity, Market, State
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import json
 from . import response_data
-from .serializers import CommoditySerializer, MarketSerializer, StateSerializer
 
 
 @api_view(['GET'])
@@ -29,24 +27,3 @@ def getCropData(request):
     }
     query = response_data.response(params).return_json()
     return Response(query)
-
-
-@api_view(['GET'])
-def getQueryData_commodity(request):
-    commodities = Commodity.objects.all()
-    serializer = CommoditySerializer(commodities, many=True)
-    return Response(serializer.data)
-
-
-@api_view(['GET'])
-def getQueryData_state(request):
-    states = State.objects.all()
-    serializer = StateSerializer(states, many=True)
-    return Response(serializer.data)
-
-
-@api_view(['GET'])
-def getQueryData_market(request):
-    markets = Market.objects.all()
-    serializer = MarketSerializer(markets, many=True)
-    return Response(serializer.data)
