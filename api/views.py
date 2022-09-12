@@ -11,6 +11,8 @@ def getQueryData(request):
 
 @api_view(['GET'])
 def getCropData(request):
+    query = request.get_queryset()
+    
     params={
         'Tx_Commodity': '35',
         'Tx_State': 'DL',
