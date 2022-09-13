@@ -31,10 +31,11 @@ class response:
             data['status'] = 403
             data['message'] = 'No data available'
             data.pop('results')
-        return  json.load(data)
+        return data
 
 
 if __name__ == '__main__':
+    # Testing params
     params = {
         'Tx_Commodity': '35',
         'Tx_State': 'DL',

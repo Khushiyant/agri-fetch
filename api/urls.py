@@ -2,5 +2,6 @@ from django.urls import path
 from . import views 
 
 urlpatterns = [
-    path('cropdata/', views.getQueryData)
+    path('querydata/', views.getQueryData),
+    path('cropdata/', views.getCropData)
 ]

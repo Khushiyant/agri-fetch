@@ -11,21 +11,23 @@ def getQueryData(request):
 
 @api_view(['GET'])
 def getCropData(request):
-    query = request.get_queryset()
+    query = request.query_params
+    print(query)
     
-    params={
-        'Tx_Commodity': '35',
-        'Tx_State': 'DL',
-        'Tx_District': '1',
-        'Tx_Market': '4747',
-        'DateFrom': '01-Jan-2022',
-        'DateTo': '01-Jul-2022',
-        'Fr_Date': '01-Jan-2022',
-        'To_Date': '01-Jul-2022',
+    params = {
+        'Tx_Commodity': query['commodityCode'],
+        'Tx_State': query['stateCode'],
+        'Tx_District': query['districtCode'],
+        'Tx_Market': query['marketCode'],   
+        'DateFrom': query['dateFrom'],
+        'DateTo': query['dateTo'],
+        'Fr_Date': query['dateFrom'],
+        'To_Date': query['toDate'],
         'Tx_Trend': '0',
-        'Tx_CommodityHead': 'Brinjal',
-        'Tx_StateHead': 'NCT of Delhi',
-        'Tx_DistrictHead': 'Delhi'
+        'Tx_CommodityHead': query['commodity'],
+        'Tx_StateHead':  query['state'],
+        'Tx_DistrictHead': query['district'],
+        'Tx_MarketHead': query['market'],
     }
     query = response_data.response(params).return_json()
     return Response(query)
