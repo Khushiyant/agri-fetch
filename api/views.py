@@ -11,23 +11,24 @@ def getQueryData(request):
 
 @api_view(['GET'])
 def getCropData(request):
-    query = request.query_params
-    print(query)
+    queryParams = request.query_params
+    print(queryParams)
     
     params = {
-        'Tx_Commodity': query['commodityCode'],
-        'Tx_State': query['stateCode'],
-        'Tx_District': query['districtCode'],
-        'Tx_Market': query['marketCode'],   
-        'DateFrom': query['dateFrom'],
-        'DateTo': query['dateTo'],
-        'Fr_Date': query['dateFrom'],
-        'To_Date': query['toDate'],
+        'Tx_Commodity': queryParams['commodityCode'],
+        'Tx_State': queryParams['stateCode'],
+        'Tx_District': queryParams['districtCode'],
+        'Tx_Market': queryParams['marketCode'],
+        'DateFrom': queryParams['dateFrom'],
+        'DateTo': queryParams['dateTo'],
+        'Fr_Date': queryParams['dateFrom'],
+        'To_Date': queryParams['dateTo'],
         'Tx_Trend': '0',
-        'Tx_CommodityHead': query['commodity'],
-        'Tx_StateHead':  query['state'],
-        'Tx_DistrictHead': query['district'],
-        'Tx_MarketHead': query['market'],
+        'Tx_CommodityHead': queryParams['commodity'],
+        'Tx_StateHead':  queryParams['state'],
+        'Tx_DistrictHead': queryParams['district'],
+        'Tx_MarketHead': queryParams['market'],
     }
+    print(params)
     query = response_data.response(params).return_json()
     return Response(query)
