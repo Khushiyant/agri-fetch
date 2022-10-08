@@ -1,0 +1,8 @@
+fetch
+
+tmp
+testing
+*/__pycache__/*
+*.pyc
+db.sqlite3
+*.DS_Store
