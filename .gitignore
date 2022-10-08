@@ -1,9 +1,17 @@
+# virtual env
 fetch
 
+# testing dirs
 tmp
 testing
+
+# pyc files
 */__pycache__/*
 *.pyc
+
+# db files
 db.sqlite3
 *.DS_Store
+
+# .env file
 .env
